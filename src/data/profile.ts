@@ -237,3 +237,60 @@ export const cards = [
     stack: ['Next.js', 'Node.js', 'Prisma'],
   },
 ]
+
+/** Stack lengkap, dikelompokkan. `where` = proyek tempat teknologi itu benar-benar dipakai. */
+export const stack = [
+  {
+    key: 'frontend',
+    items: [
+      { n: 'Next.js', where: 'Tanibaik, Kaleka.id, Aspiran, Kolibri, TJF' },
+      { n: 'React', where: 'Satudata, Konflik, admin Pugar Bumi' },
+      { n: 'Vue 3', where: 'Lentera, portofolio ini' },
+      { n: 'TypeScript', where: 'hampir semua proyek' },
+      { n: 'Tailwind CSS · MUI', where: 'Kaleka, Aspiran, Kolibri' },
+      { n: 'TanStack Query · Zustand', where: 'state & data fetching' },
+      { n: 'Framer Motion · Canvas', where: 'animasi & interaksi' },
+    ],
+  },
+  {
+    key: 'backend',
+    items: [
+      { n: 'ASP.NET Core · C#', where: 'Tanibaik, Pugar Bumi, Kaleka, Satudata' },
+      { n: 'Entity Framework Core', where: 'migrasi, relasi, query' },
+      { n: 'Laravel + Octane', where: 'admin Miniseri' },
+      { n: 'Node.js · Prisma', where: 'Momenta' },
+      { n: 'REST API · JWT', where: 'auth, role & permission' },
+      { n: 'OTP WhatsApp → SMS', where: 'login multi-channel Tanibaik' },
+    ],
+  },
+  {
+    key: 'mobile',
+    items: [
+      { n: 'Flutter · Dart', where: 'Tanibaik, Pugar Bumi, Katapeta, Miniseri' },
+      { n: 'Offline-first', where: 'peta offline, draf lapangan' },
+      { n: 'Multi-file upload', where: 'dokumen & foto kegiatan' },
+      { n: 'Rilis ke store', where: 'Google Play & App Store' },
+    ],
+  },
+  {
+    key: 'data_maps',
+    items: [
+      { n: 'PostgreSQL', where: 'database utama' },
+      { n: 'Leaflet · Esri · GeoJSON', where: 'poligon lahan, peta anggota' },
+      { n: 'Chart.js · Recharts', where: 'dashboard harga & dampak' },
+      { n: 'ExcelJS · docxtemplater', where: 'ekspor laporan' },
+      { n: 'Firebase · Google Analytics', where: 'analitik & notifikasi' },
+    ],
+  },
+  {
+    key: 'devops',
+    items: [
+      { n: 'Git', where: '770+ commit, 17 repo' },
+      { n: 'Docker', where: 'container produksi Kaleka' },
+      { n: 'Nginx · Supervisor', where: 'server Miniseri' },
+      { n: 'Vercel', where: 'portofolio ini' },
+      { n: 'Deploy dev & prod', where: 'migrasi DB & redeploy' },
+    ],
+  },
+]
+

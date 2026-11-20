@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import cutout from './assets/dian-cutout.png'
-import { boot, branches, cards, featured, markers, profile, stats, tagline, timeline } from './data/profile'
+import { boot, branches, cards, featured, markers, profile, stack, stats, tagline, timeline } from './data/profile'
 import { startSora } from './engine/sora'
 
 const links = profile.links.filter((l) => l.href)
@@ -25,6 +25,11 @@ addEventListener('scroll', () => {
 
 onMounted(() => {
   startSora({ email: profile.email, tagline, timeline, markers, branches })
+
+  // stack.json groups slide in when scrolled into view
+  const groups = document.querySelectorAll('.sgroup')
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { rootMargin: '0px 0px -10% 0px' })
+  groups.forEach((g) => io.observe(g))
 
   // Depth parallax: back name, photo and front name drift by different amounts with the pointer.
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches
@@ -89,7 +94,7 @@ onMounted(() => {
               <div class="meta">
                 <div><span>Peran</span><span>Fullstack Engineer</span></div>
                 <div><span>Kerja</span><span>KALEKA · freelance · produk sendiri</span></div>
-                <div><span>Stack</span><span>Next.js · Vue · .NET · Laravel · Flutter</span></div>
+                <div><span>Stack</span><span>Next.js · React · Vue · .NET · Laravel · Flutter</span></div>
               </div>
               <p class="typed" id="typed" data-in="600"><span id="typedText"></span><i class="caret" aria-hidden="true"></i></p>
             </div>
@@ -169,6 +174,22 @@ onMounted(() => {
       <div class="stats">
         <div class="panel br">
           <div v-for="s in featured.stats" :key="s.label" class="srow"><span>{{ s.label }}</span><b>{{ s.value }}</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="stackx pad" id="stack">
+      <div class="stack-head">
+        <p class="eyebrow">// $ cat stack.json</p>
+        <h3 class="disp">Stack yang saya <em>pakai</em></h3>
+        <p class="stack-lede">Bukan daftar hafalan. Setiap teknologi di bawah ini saya pakai di produk yang sudah rilis.</p>
+      </div>
+      <div class="sgrid">
+        <div v-for="(g, gi) in stack" :key="g.key" class="sgroup" :style="{ '--d': gi * 90 + 'ms' }">
+          <span class="sk">"{{ g.key }}": [</span>
+          <ul>
+            <li v-for="t in g.items" :key="t.n"><b>{{ t.n }}</b><small>{{ t.where }}</small></li>
+          </ul>
+          <span class="sk">]{{ gi < stack.length - 1 ? ',' : '' }}</span>
         </div>
       </div>
     </div>
