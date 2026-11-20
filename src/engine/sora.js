@@ -100,10 +100,11 @@ addEventListener('pointermove',e=>{ptr.x=e.clientX;ptr.y=e.clientY;ptr.last=perf
 // Globe sits right behind the centered portrait: same horizontal centre, around head height.
 // Measured with offsets (not getBoundingClientRect) so the sticky-stack scale doesn't skew it.
 let GC=null;
-function calcGlobe(){const el=document.querySelector('.cutout'),root=document.querySelector('.hero .stk-inner');
-  if(!el||!root){GC=null;return;}
-  let x=0,y=0,n=el;while(n&&n!==root){x+=n.offsetLeft;y+=n.offsetTop;n=n.offsetParent;}
-  const w=el.offsetWidth,h=el.offsetHeight;GC={x:x+w/2,y:y+h*.46,r:Math.min(h*.5,VW*.44)};}
+function calcGlobe(){const el=document.querySelector('.cutout'),stage=document.querySelector('.stage'),root=document.querySelector('.hero .stk-inner');
+  if(!el||!stage||!root){GC=null;return;}
+  // portrait is always centred in the stage, so take the stage's centre line (immune to CSS translate)
+  let sx=0,sy=0,n=stage;while(n&&n!==root){sx+=n.offsetLeft;sy+=n.offsetTop;n=n.offsetParent;}
+  const h=el.offsetHeight,top=sy+el.offsetTop;GC={x:sx+stage.offsetWidth/2,y:top+h*.46,r:Math.min(h*.5,VW*.44)};}
 function globeCenter(){return GC||(VW<1024?{x:VW*.5,y:VH*.5,r:Math.min(VW,VH)*.3}:{x:VW*.5,y:VH*.5,r:Math.min(VW,VH)*.36});}
 function drawGlobe(x,t,mode,scanY){
   const g=globeCenter(),rot=t/10000*Math.PI*2;
