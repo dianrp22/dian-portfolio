@@ -3,7 +3,7 @@
 export const profile = {
   name: 'Dian Rizki Pratama',
   initials: 'DRP',
-  role: 'Frontend Engineer',
+  role: 'Fullstack Engineer',
   company: 'KALEKA Indonesia',
   location: 'Bali',
   timezone: 'Asia/Makassar',
@@ -13,15 +13,15 @@ export const profile = {
   whatsappText: 'Halo Dian, saya baru lihat portofolio kamu dan ingin ngobrol soal ',
   // Isi link asli lalu simpan; link kosong tidak ditampilkan.
   links: [
-    { label: 'GitHub', href: 'https://github.com/dianrp22' },
-    { label: 'LinkedIn', href: '' },
+    { label: 'GitHub', href: 'https://github.com/dianrp22', icon: 'code', cta: 'Lihat kode' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dian-rizki-pratama/', icon: 'in', cta: 'Lihat profil' },
   ],
 }
 
 /** Angka di plate peta perjalanan (dihitung dari riwayat git). */
 export const stats = [
   { label: 'Tahun berkarya', value: '05' },
-  { label: 'Produk dibangun', value: '12' },
+  { label: 'Produk dirilis', value: '12' },
   { label: 'Repositori', value: '17' },
   { label: 'Platform', value: '03' },
 ]
@@ -53,7 +53,7 @@ export const branches = [
 ]
 
 /** Baris yang diketik di hero. */
-export const tagline = '> fullstack: Next.js & Vue di frontend, ASP.NET Core & Laravel di backend, Flutter di mobile. 12 produk sudah dirilis.'
+export const tagline = '> satu orang, satu produk utuh: database, API, web, sampai aplikasi di App Store & Google Play. 12 produk sudah dipakai orang sungguhan.'
 
 /** Log boot di layar loading. */
 export const boot = [
@@ -134,12 +134,12 @@ export const timeline = [
 export const featured = {
   name: 'Tanibaik',
   report:
-    'Platform pemberdayaan petani sawit: pelatihan, sertifikasi keberlanjutan (ISPO/RSPO), pemetaan lahan, sampai penyerapan hasil panen. Saya memegangnya end-to-end, dari skema database sampai aplikasi di HP petani.',
+    'Platform yang membantu petani sawit naik kelas: pelatihan, sertifikasi keberlanjutan (ISPO/RSPO), pemetaan lahan, sampai penjualan hasil panen. Tiga codebase (web, API, mobile) saya pegang sendiri sejak 2023, dari skema database sampai aplikasi yang dipakai petani di lapangan.',
   highlights: [
-    'Program donor dari nol: dashboard dampak publik dan privat, membership bertingkat, serta ambassador dan kode referal yang melacak sumber pendaftaran.',
-    'Login OTP WhatsApp yang otomatis pindah ke SMS (OTP.ID), sehingga login tidak mati total saat satu vendor bermasalah.',
-    'Rantai penyerapan hasil panen: transaksi, kuitansi otomatis, pengajuan ulang, notifikasi admin, dan ekspor Excel.',
-    'Pelatihan dan sertifikasi (video, buku saku flipbook, kuis) di web dan mobile, plus dashboard harga komoditas dwibahasa.',
+    'Membuka sumber pendanaan baru: program donor dari nol, lengkap dengan dashboard dampak publik/privat, membership bertingkat, dan kode referal ambassador yang melacak asal setiap pendaftar.',
+    'Login yang tidak gampang tumbang: OTP WhatsApp otomatis beralih ke SMS saat satu vendor bermasalah, jadi petani tetap bisa masuk.',
+    'Memangkas kerja manual admin: transaksi hasil panen dengan kuitansi otomatis, pengajuan ulang, notifikasi, dan ekspor Excel sekali klik.',
+    'Belajar dari HP: pelatihan dan sertifikasi (video, buku saku flipbook, kuis) di web dan mobile, plus dashboard harga komoditas dwibahasa.',
   ],
   stats: [
     { label: 'Peran', value: 'Fullstack' },
@@ -155,7 +155,7 @@ export const cards = [
     st: 'Berjalan',
     name: 'Tanibaik',
     kind: 'Web · API · Mobile',
-    p: 'Pemberdayaan petani: donor, pelatihan, sertifikasi, dan penyerapan hasil panen.',
+    p: 'Satu ekosistem untuk petani, donor, dan admin: pelatihan, sertifikasi, sampai penjualan hasil panen. Web, API, dan mobile dipegang satu orang.',
     stack: ['Next.js', '.NET', 'Flutter'],
     live: true,
   },
@@ -163,56 +163,56 @@ export const cards = [
     st: 'Mobile',
     name: 'Pugar Bumi',
     kind: 'Restorasi lahan',
-    p: 'Aplikasi Flutter dari commit pertama: verifikasi titik tanam berbasis poligon, kegiatan desa, dan unggah banyak file.',
+    p: 'Dibangun dari commit pertama. Tim lapangan memverifikasi titik tanam langsung di dalam poligon lahan, mencatat kegiatan desa, dan mengunggah bukti sekaligus.',
     stack: ['Flutter', '.NET', 'React'],
   },
   {
     st: 'Mobile',
     name: 'Katapeta',
     kind: 'Pemetaan',
-    p: 'Pemetaan bebas dan komoditas, peta offline, penyimpanan draf, dan alur sertifikasi.',
+    p: 'Tetap jalan tanpa sinyal: peta offline dan draf tersimpan, jadi pemetaan lahan dan komoditas di pelosok tidak hilang.',
     stack: ['Flutter', 'Offline map'],
   },
   {
     st: 'Web',
     name: 'Kaleka.id',
     kind: 'Situs + CMS',
-    p: 'Publikasi, riset, Mosaik Initiative, dan dashboard analitik. Dirawat sejak 2022.',
+    p: 'Wajah publik Kaleka: publikasi, riset, Mosaik Initiative, dan dashboard analitik. Saya bangun dan rawat sejak 2022.',
     stack: ['Next.js', '.NET'],
   },
   {
     st: 'Web',
     name: 'Aspiran',
     kind: 'Platform aliansi',
-    p: 'Dibangun dari nol: peta anggota dengan pemilih koordinat, notula publik, dan Firebase Analytics.',
+    p: 'Dari nol sampai live: peta anggota interaktif, notula rapat yang terbuka untuk publik, dan analitik pengunjung.',
     stack: ['Next.js', 'Leaflet'],
   },
   {
     st: 'Web',
     name: 'Kolibri',
     kind: 'Platform aliansi',
-    p: 'Peta area anggota berbentuk poligon, metrik dampak, dan CMS konten.',
+    p: 'Wilayah kerja anggota tampil sebagai poligon di peta, lengkap dengan metrik dampak dan CMS yang bisa diurus tim sendiri.',
     stack: ['Next.js', 'Leaflet', '.NET'],
   },
   {
     st: 'Data',
     name: 'Satudata',
     kind: 'Portal data',
-    p: 'Katalog dan master data, serta backend yang menarik data perlindungan hutan dan profil lahan.',
+    p: 'Satu pintu untuk data: katalog dan master data, plus backend yang menarik data perlindungan hutan dan profil lahan secara otomatis.',
     stack: ['React', '.NET'],
   },
   {
     st: 'Web',
     name: 'Konflik',
     kind: 'Mediasi konflik lahan',
-    p: 'Role dan permission, mediator dan tipologi konflik, proses penyelesaian, serta laporan kabupaten.',
+    p: 'Membantu mediator menyelesaikan konflik lahan: alur penyelesaian terstruktur, role dan permission, sampai laporan tingkat kabupaten.',
     stack: ['React', 'Esri Leaflet'],
   },
   {
     st: 'Rilis',
     name: 'Miniseri',
     kind: 'Streaming · mobile',
-    p: 'Platform video vertikal untuk mini series. Aplikasi Flutter di Google Play dan App Store, admin Laravel Octane di server sendiri.',
+    p: 'Dari kode sampai toko aplikasi: platform video vertikal yang rilis di Google Play dan App Store, plus admin Laravel Octane yang saya deploy sendiri.',
     stack: ['Flutter', 'Laravel', 'Nginx'],
   },
   {
@@ -226,14 +226,14 @@ export const cards = [
     st: 'Pribadi',
     name: 'SaaS Booking',
     kind: 'Multi-tenant · MVP',
-    p: 'Platform booking multi-tenant: halaman publik untuk pelanggan dan dashboard admin per tenant.',
+    p: 'Satu sistem untuk banyak bisnis: tiap tenant punya halaman booking publik dan dashboard admin sendiri.',
     stack: ['Next.js', 'ASP.NET Core', 'PostgreSQL'],
   },
   {
     st: 'Dalam proses',
     name: 'Momenta',
     kind: 'SaaS undangan digital',
-    p: 'Self-service undangan digital untuk berbagai acara dengan editor visual: desain, publish, lalu bagikan dalam kurang dari 30 menit.',
+    p: 'Undangan digital tanpa desainer: editor visual self-service, dari desain sampai dibagikan dalam kurang dari 30 menit.',
     stack: ['Next.js', 'Node.js', 'Prisma'],
   },
 ]

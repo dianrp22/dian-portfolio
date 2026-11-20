@@ -105,13 +105,13 @@ onMounted(() => {
                 <div class="bar" aria-label="sedang berjalan"><i></i></div>
               </div>
               <div class="panel br">
-                <span class="eyebrow">Di luar kantor</span>
-                <p>Miniseri · TJF · SaaS Booking · Momenta</p>
+                <span class="eyebrow">Terbuka untuk</span>
+                <p>Proyek freelance web, API &amp; mobile · kolaborasi remote</p>
               </div>
             </div>
           </div>
           <div class="hero-foot" data-in="1500">
-            <a class="cta" href="#perjalanan">[ Lihat perjalanan → ]</a>
+            <a class="cta" href="#karya">[ Lihat 12 produk → ]</a>
             <span class="eyebrow">Gerakkan kursor di atas halaman</span>
             <div class="socials">
               <a :href="`mailto:${profile.email}`">Email</a>
@@ -221,7 +221,7 @@ onMounted(() => {
         <div class="fmain">
           <p class="eyebrow">04 · $ contact --dian</p>
           <h2 class="disp">Ayo bangun<br><em>bersama.</em></h2>
-          <p class="flead">Punya proyek web, API, atau aplikasi mobile, atau posisi yang cocok? Ceritakan saja, nanti kita bahas bareng.</p>
+          <p class="flead">Butuh satu orang yang bisa memegang web, API, dan aplikasi mobile sekaligus? Ceritakan ide atau kebutuhanmu, saya bantu dari rancangan sampai rilis.</p>
 
           <div class="cgrid">
             <a class="ccard ccard--wa" :href="waLink" target="_blank" rel="noopener">
@@ -235,9 +235,12 @@ onMounted(() => {
               <span class="cgo">Klik untuk salin <b aria-hidden="true">⧉</b></span>
             </button>
             <a v-for="l in links" :key="l.label" class="ccard" :href="l.href" target="_blank" rel="noopener">
-              <span class="ck"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" /></svg>{{ l.label }}</span>
-              <span class="cv cv--sm">{{ l.href.replace('https://', '') }}</span>
-              <span class="cgo">Lihat kode <b aria-hidden="true">↗</b></span>
+              <span class="ck">
+                <svg v-if="l.icon === 'in'" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7" /></svg>
+                <svg v-else viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" /></svg>{{ l.label }}
+              </span>
+              <span class="cv cv--sm">{{ l.href.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '') }}</span>
+              <span class="cgo">{{ l.cta }} <b aria-hidden="true">↗</b></span>
             </a>
           </div>
           <p class="copied" id="copied" aria-live="polite"></p>
@@ -245,7 +248,7 @@ onMounted(() => {
           <div class="fstatus">
             <span><i class="dot" aria-hidden="true"></i>Bali · {{ time }} WITA</span>
             <span>Fullstack · web, API, mobile</span>
-            <span>Bali · remote</span>
+            <span>Terbuka: freelance &amp; remote</span>
           </div>
         </div>
         <nav class="fside" aria-label="Navigasi bawah">
