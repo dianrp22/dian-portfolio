@@ -216,7 +216,16 @@ body{margin:0}
 @keyframes blink{50%{opacity:0}}
 .photo-cap,.card .st,.card li,.srow span,.plate span,.map-hint,.veil-pct,.legal{font-family:var(--f-mono);text-transform:none}
 @media (prefers-reduced-motion:reduce){.caret{animation:none}}
-@media (max-width:639px){.season-lede{display:none}.season-ui{padding-top:22vh}.map-hint{display:none}}
+@media (max-width:639px){
+  .season-lede{display:none}.map-hint{display:none}
+  .season-ui{padding-top:9vh;padding-bottom:16px}
+  .season h2{font-size:40px}
+  .plate{width:100%;display:grid;grid-template-columns:repeat(4,1fr);padding:10px 4px}
+  .plate .row{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:2px;border-top:0;border-left:1px solid var(--w20);padding:2px 10px}
+  .plate .row:first-of-type{border-left:0}
+  .plate b{font-size:24px}
+  .plate span{font-size:10px;line-height:1.2}
+}
 
 /* ---------- hero stage: centered cut-out portrait with layered name ---------- */
 .stage{position:relative;min-height:0;--px:0;--py:0;margin-top:8px}

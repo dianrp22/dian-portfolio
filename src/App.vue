@@ -85,11 +85,11 @@ onMounted(() => {
               <img :src="cutout" alt="Foto Dian Rizki Pratama" width="400" height="400">
             </figure>
             <div class="hside hside-l" data-in="900">
-              <p class="eyebrow">~/dian $ whoami · frontend engineer</p>
+              <p class="eyebrow">~/dian $ whoami · fullstack engineer</p>
               <div class="meta">
-                <div><span>Peran</span><span>{{ profile.role }} · full-stack</span></div>
-                <div><span>Basis</span><span>{{ profile.location }} · {{ profile.company }}</span></div>
-                <div><span>Stack</span><span>Next.js · .NET · Flutter</span></div>
+                <div><span>Peran</span><span>Fullstack Engineer</span></div>
+                <div><span>Kerja</span><span>KALEKA · freelance · produk sendiri</span></div>
+                <div><span>Stack</span><span>Next.js · Vue · .NET · Laravel · Flutter</span></div>
               </div>
               <p class="typed" id="typed" data-in="600"><span id="typedText"></span><i class="caret" aria-hidden="true"></i></p>
             </div>
@@ -223,8 +223,8 @@ onMounted(() => {
 
           <div class="fstatus">
             <span><i class="dot" aria-hidden="true"></i>Bali · {{ time }} WITA</span>
-            <span>Frontend Engineer @ KALEKA</span>
-            <span>Web · API · Mobile</span>
+            <span>Fullstack · web, API, mobile</span>
+            <span>Bali · remote</span>
           </div>
         </div>
         <nav class="fside" aria-label="Navigasi bawah">

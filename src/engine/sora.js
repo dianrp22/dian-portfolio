@@ -214,7 +214,19 @@ function buildGraph(){
   const lanes=Math.max(...D.branches.map(b=>Math.abs(b.lane)));const gap=box.h/(lanes*2+1);
   const mainY=box.y+box.h/2,dx=Math.min(26,box.w*.03);
   const bez=(a,b,c,d,n)=>{const out=[];for(let s=1;s<=n;s++){const t=s/n,u=1-t;out.push([u*u*u*a[0]+3*u*u*t*b[0]+3*u*t*t*c[0]+t*t*t*d[0],u*u*u*a[1]+3*u*u*t*b[1]+3*u*t*t*c[1]+t*t*t*d[1]]);}return out;};
-  G={X,X0:X(T0),X1:X(T1),mainY,gap,box,branches:[],main:[[X(T0),mainY],[X(2026.95),mainY]]};
+  G={X,X0:X(T0),X1:X(T1),mainY,gap,box,branches:[],main:[[X(T0),mainY],[X(2026.95),mainY]],mobile:false};
+  if(VW<640){
+    // phone: one tidy row per repo (sorted by start), straight lit segment on a shared time axis
+    const mb={x:VW*.05,y:VH*.27,w:VW*.9,h:VH*.47},rows=[...D.branches].sort((a,b)=>a.from-b.from),rg=mb.h/(rows.length+1);
+    const MX=t=>mb.x+mb.w*(t<2022?(t-2020)/2*.16:.16+(t-2022)/5*.84);
+    const my=mb.y+rg*.65;
+    G={X:MX,X0:MX(T0),X1:MX(T1),mainY:my,gap:rg,box:mb,branches:[],main:[[MX(T0),my],[MX(2026.95),my]],mobile:true};
+    rows.forEach((b,i)=>{const y=mb.y+rg*(i+1)+rg*.65,x0=MX(b.from),x1=MX(b.to);
+      const n=Math.max(3,Math.round(Math.sqrt(b.commits||9)*1.1)),commits=[];
+      for(let k=0;k<n;k++){const t=b.from+.04+(b.to-b.from-.08)*(k/(n-1));commits.push({x:MX(t),y,t});}
+      G.branches.push({...b,count:b.commits,y,pts:[[x0,y],[x1,y]],commits,labelX:mb.x});});
+    return;
+  }
   for(const b of D.branches){
     const y=mainY+b.lane*gap,x0=X(b.from),x1=X(b.to),pts=[[x0,mainY]];
     pts.push(...bez([x0,mainY],[x0+dx,mainY],[x0,y],[x0+dx,y],12));
@@ -255,10 +267,13 @@ function mapFrame(now){
   x.fillStyle='#4a5370';for(const d of dots){x.globalAlpha=(d[2]-.42)*1.6;x.fillRect(d[0]-.75,d[1]-.75,1.5,1.5);}x.globalAlpha=1;
   // year axis
   x.font=`400 10.5px ${MONO}`;x.textAlign='center';
-  for(let yr=2020;yr<=2026;yr++){const gx=G.X(yr);x.fillStyle='#4a5370';x.fillRect(gx,G.box.y+G.box.h+14,1,6);x.fillText(String(yr),gx,G.box.y+G.box.h+34);}
+  for(let yr=2020;yr<=2026;yr++){if(G.mobile&&yr===2021)continue;const gx=G.X(yr);x.fillStyle='#4a5370';x.fillRect(gx,G.box.y+G.box.h+14,1,6);x.fillText(String(yr),gx,G.box.y+G.box.h+34);}
   x.textAlign='left';
   const cut=S.done?1e9:G.X0+(G.X1-G.X0)*S.trace;
   x.lineJoin='round';x.lineCap='round';
+  // phone: faint full-width track per row so rows read as a table
+  if(G.mobile){x.save();x.setLineDash([2,4]);x.strokeStyle='#1a2238';x.lineWidth=1;
+    [G.mainY,...G.branches.map(b=>b.y)].forEach(y=>{x.beginPath();x.moveTo(G.X0,y);x.lineTo(G.X1,y);x.stroke();});x.restore();}
   // unlit graph
   x.strokeStyle='#202941';x.lineWidth=1.5;
   x.beginPath();x.moveTo(...G.main[0]);x.lineTo(...G.main[1]);x.stroke();
@@ -272,8 +287,13 @@ function mapFrame(now){
   // commits
   G.branches.forEach(b=>b.commits.forEach(c=>{const lit=c.x<=cut;
     x.fillStyle=lit?'#5b7cfa':'#0f1528';x.strokeStyle=lit?'#5b7cfa':'#4a5370';x.lineWidth=1.5;
-    x.beginPath();x.arc(c.x,c.y,lit?3.2:2.6,0,7);x.fill();x.stroke();}));
+    x.beginPath();x.arc(c.x,c.y,G.mobile?(lit?2.4:2):(lit?3.2:2.6),0,7);x.fill();x.stroke();}));
   // branch labels
+  if(G.mobile){x.font=`500 10.5px ${MONO}`;
+    x.fillStyle='#ffffff';x.fillText('main · karier',G.box.x,G.mainY-8);
+    G.branches.forEach(b=>{const lit=b.pts[0][0]<=cut,meta=b.count?`${b.count}`:'store';
+      x.textAlign='left';x.fillStyle=lit?'#ffffff':'#4a5370';x.fillText(b.name,G.box.x,b.y-7);
+      x.textAlign='right';x.fillStyle=lit?'#7b84a0':'#2a3350';x.fillText(meta,G.box.x+G.box.w,b.y-7);x.textAlign='left';});}
   if(VW>=640){x.font=`500 11px ${MONO}`;G.branches.forEach(b=>{const lit=b.pts[0][0]<=cut;
     const meta=b.count?`${b.count} commit`:(b.note||''),full=`${b.name}  ${meta}`;
     const lx=b.labelX+x.measureText(full).width>w-16?b.pts[0][0]-12-x.measureText(full).width:b.labelX;

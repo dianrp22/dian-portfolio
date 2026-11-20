@@ -53,7 +53,7 @@ export const branches = [
 ]
 
 /** Baris yang diketik di hero. */
-export const tagline = '> membangun web, API & mobile untuk petani dan hutan Indonesia'
+export const tagline = '> fullstack: Next.js & Vue di frontend, ASP.NET Core & Laravel di backend, Flutter di mobile. 12 produk dirilis, 770+ commit.'
 
 /** Log boot di layar loading. */
 export const boot = [
