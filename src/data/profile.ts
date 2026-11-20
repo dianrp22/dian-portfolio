@@ -23,7 +23,7 @@ export const stats = [
   { label: 'Tahun berkarya', value: '05' },
   { label: 'Produk dibangun', value: '12' },
   { label: 'Repositori', value: '17' },
-  { label: 'Commit', value: '770+' },
+  { label: 'Platform', value: '03' },
 ]
 
 /** Tag di garis main pada graf git (t = tahun desimal). */
@@ -35,7 +35,7 @@ export const markers = [
 ]
 
 /**
- * Cabang di graf git: satu cabang per produk, dengan jumlah commit asli dari riwayat git.
+ * Cabang di graf git: satu cabang per produk, sesuai periode pengerjaannya.
  * lane = baris di atas (-) atau bawah (+) garis main; merge = cabang sudah selesai/digabung.
  */
 export const branches = [
@@ -47,19 +47,19 @@ export const branches = [
   { name: 'aspiran', from: 2025.2, to: 2026.15, lane: 3, commits: 54, merge: true },
   { name: 'kolibri', from: 2025.2, to: 2026.7, lane: -4, commits: 40, merge: true },
   { name: 'katapeta', from: 2025.2, to: 2026.4, lane: 4, commits: 14, merge: true },
-  // proyek di luar Kaleka (repo Miniseri tidak ada di laptop ini, jadi tanpa angka commit)
+  // proyek di luar Kaleka
   { name: 'miniseri', from: 2024.9, to: 2025.35, lane: 5, commits: 0, merge: true, note: 'app store + play' },
   { name: 'tjf-prototype', from: 2026.45, to: 2026.55, lane: -5, commits: 15, merge: true },
 ]
 
 /** Baris yang diketik di hero. */
-export const tagline = '> fullstack: Next.js & Vue di frontend, ASP.NET Core & Laravel di backend, Flutter di mobile. 12 produk dirilis, 770+ commit.'
+export const tagline = '> fullstack: Next.js & Vue di frontend, ASP.NET Core & Laravel di backend, Flutter di mobile. 12 produk sudah dirilis.'
 
 /** Log boot di layar loading. */
 export const boot = [
   '[ ok ] memuat 17 repositori',
-  '[ ok ] menyusun 770+ commit',
-  '[ ok ] menyiapkan 7 produk',
+  '[ ok ] menyusun web, API & mobile',
+  '[ ok ] menyiapkan 12 produk',
   '[ ok ] siap',
 ]
 
@@ -96,8 +96,8 @@ export const timeline = [
     y: '2023',
     t: 'Frontend Engineer',
     s: 'KALEKA Indonesia · Bali',
-    c: 'Memegang Tanibaik end-to-end di tiga codebase (web Next.js, API ASP.NET Core, aplikasi Flutter) dengan 440+ commit.',
-    code: ['$ git checkout kaleka/tanibaik', '> web: next.js   api: .net', '> app: flutter   db: postgres', '✓ 440+ commit'],
+    c: 'Memegang Tanibaik end-to-end di tiga codebase (web Next.js, API ASP.NET Core, aplikasi Flutter), dari skema database sampai aplikasi di HP petani.',
+    code: ['$ git checkout kaleka/tanibaik', '> web: next.js   api: .net', '> app: flutter   db: postgres', '✓ live di 3 platform'],
     m: 'rings',
     h: 200,
   },
@@ -124,7 +124,7 @@ export const timeline = [
     t: 'Sekarang',
     s: '7+ produk Kaleka · proyek pribadi',
     c: 'Di Kaleka: program donor, membership dan referal, kuitansi otomatis, dan OTP WhatsApp→SMS. Di luar kantor: TJF Prototype, SaaS Booking multi-tenant (Next.js + .NET), dan Momenta, editor undangan digital.',
-    code: ['$ git log --oneline | wc -l', '> 770+ commit · 17 repo', '> produk.aktif = 7', '✓ HEAD → main'],
+    code: ['$ git log --all --oneline', '> kaleka · freelance · pribadi', '> produk.rilis = 12', '✓ HEAD → main'],
     m: 'stripes',
     h: 215,
   },
@@ -142,7 +142,7 @@ export const featured = {
     'Pelatihan dan sertifikasi (video, buku saku flipbook, kuis) di web dan mobile, plus dashboard harga komoditas dwibahasa.',
   ],
   stats: [
-    { label: 'Commit', value: '446' },
+    { label: 'Peran', value: 'Fullstack' },
     { label: 'Codebase', value: '03' },
     { label: 'Sejak', value: '2023' },
     { label: 'Bahasa', value: 'ID/EN' },
@@ -177,7 +177,7 @@ export const cards = [
     st: 'Web',
     name: 'Kaleka.id',
     kind: 'Situs + CMS',
-    p: 'Publikasi, riset, Mosaik Initiative, dan dashboard analitik. 90+ commit sejak 2022.',
+    p: 'Publikasi, riset, Mosaik Initiative, dan dashboard analitik. Dirawat sejak 2022.',
     stack: ['Next.js', '.NET'],
   },
   {
@@ -285,7 +285,7 @@ export const stack = [
   {
     key: 'devops',
     items: [
-      { n: 'Git', where: '770+ commit, 17 repo' },
+      { n: 'Git', where: 'semua proyek, 17 repositori' },
       { n: 'Docker', where: 'container produksi Kaleka' },
       { n: 'Nginx · Supervisor', where: 'server Miniseri' },
       { n: 'Vercel', where: 'portofolio ini' },

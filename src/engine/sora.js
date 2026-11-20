@@ -291,11 +291,11 @@ function mapFrame(now){
   // branch labels
   if(G.mobile){x.font=`500 10.5px ${MONO}`;
     x.fillStyle='#ffffff';x.fillText('main · karier',G.box.x,G.mainY-8);
-    G.branches.forEach(b=>{const lit=b.pts[0][0]<=cut,meta=b.count?`${b.count}`:'store';
+    G.branches.forEach(b=>{const lit=b.pts[0][0]<=cut,y0=String(Math.floor(b.from)).slice(2),y1=String(Math.floor(b.to)).slice(2),meta=!b.merge?`${y0}–kini`:y0===y1?`'${y0}`:`${y0}–${y1}`;
       x.textAlign='left';x.fillStyle=lit?'#ffffff':'#4a5370';x.fillText(b.name,G.box.x,b.y-7);
       x.textAlign='right';x.fillStyle=lit?'#7b84a0':'#2a3350';x.fillText(meta,G.box.x+G.box.w,b.y-7);x.textAlign='left';});}
   if(VW>=640){x.font=`500 11px ${MONO}`;G.branches.forEach(b=>{const lit=b.pts[0][0]<=cut;
-    const meta=b.count?`${b.count} commit`:(b.note||''),full=`${b.name}  ${meta}`;
+    const f0=Math.floor(b.from),f1=Math.floor(b.to),meta=!b.merge?`${f0}–kini`:f0===f1?`${f0}`:`${f0}–${f1}`,full=`${b.name}  ${meta}`;
     const lx=b.labelX+x.measureText(full).width>w-16?b.pts[0][0]-12-x.measureText(full).width:b.labelX;
     x.fillStyle=lit?'#ffffff':'#4a5370';x.fillText(b.name,lx,b.y-9);
     if(lit){x.fillStyle='#7b84a0';x.fillText(meta,lx+x.measureText(b.name+'  ').width,b.y-9);}});}

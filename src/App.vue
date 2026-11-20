@@ -133,7 +133,7 @@ onMounted(() => {
           <div>
             <p class="eyebrow">01 · git log --graph</p>
             <h2 class="disp" id="h2a">Perjalanan<br><em>dalam commit</em></h2>
-            <p class="season-lede">Setiap cabang adalah produk yang saya bangun, di Kaleka maupun di luar kantor, dengan jumlah commit asli dari riwayat git. Garis main adalah karier saya, dari kampus sampai HEAD hari ini.</p>
+            <p class="season-lede">Setiap cabang adalah produk yang saya bangun, di Kaleka maupun di luar kantor, sesuai periode pengerjaannya. Garis main adalah karier saya, dari kampus sampai HEAD hari ini.</p>
           </div>
           <div class="plate br" id="plate">
             <div v-for="s in stats" :key="s.label" class="row"><span>{{ s.label }}</span><b>{{ s.value }}</b></div>
