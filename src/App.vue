@@ -246,7 +246,7 @@ onMounted(() => {
           <p class="copied" id="copied" aria-live="polite"></p>
 
           <div class="fstatus">
-            <span><i class="dot" aria-hidden="true"></i>Medan · {{ time }} WIB</span>
+            <span><i class="dot" aria-hidden="true"></i>{{ time }} WIB</span>
             <span>Fullstack · web, API, mobile</span>
             <span>Terbuka: freelance &amp; remote</span>
           </div>

@@ -53,7 +53,7 @@ export const branches = [
 ]
 
 /** Baris yang diketik di hero. */
-export const tagline = '> saya membangun platform untuk pertanian, konservasi, dan organisasi nirlaba: web, API, dan aplikasi mobile.'
+export const tagline = '> fullstack engineer di KALEKA, Bali: membangun platform untuk pertanian, konservasi, dan organisasi nirlaba, dari web, API, sampai aplikasi mobile.'
 
 /** Log boot di layar loading. */
 export const boot = [
@@ -95,7 +95,7 @@ export const timeline = [
   {
     y: '2023',
     t: 'Frontend Engineer',
-    s: 'KALEKA Indonesia · remote',
+    s: 'KALEKA Indonesia · Bali',
     c: 'Developer utama Tanibaik, platform layanan petani sawit (web, API, dan aplikasi Android/iOS). Di Kaleka saya juga merawat situs dan CMS, portal data, platform berbasis peta, dan aplikasi lapangan.',
     code: ['$ git checkout kaleka/tanibaik', '> web: next.js   api: .net', '> app: flutter   db: postgres', '✓ live di 3 platform'],
     m: 'rings',
