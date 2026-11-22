@@ -5,8 +5,8 @@ export const profile = {
   initials: 'DRP',
   role: 'Fullstack Engineer',
   company: 'KALEKA Indonesia',
-  location: 'Bali',
-  timezone: 'Asia/Makassar',
+  location: 'Medan',
+  timezone: 'Asia/Jakarta',
   email: 'dianrizkipratama22@gmail.com',
   whatsapp: '6285360043696', // format internasional untuk link wa.me
   whatsappDisplay: '+62 853-6004-3696',
@@ -21,7 +21,7 @@ export const profile = {
 /** Angka di plate peta perjalanan (dihitung dari riwayat git). */
 export const stats = [
   { label: 'Tahun berkarya', value: '05' },
-  { label: 'Produk dirilis', value: '12' },
+  { label: 'Remote sejak', value: '2023' },
   { label: 'Repositori', value: '17' },
   { label: 'Platform', value: '03' },
 ]
@@ -31,7 +31,7 @@ export const markers = [
   { t: 2020.5, l: 'v2020 · Telkom University' },
   { t: 2021.7, l: 'v2021 · PT Lentera' },
   { t: 2023.4, l: 'v2023 · KALEKA' },
-  { t: 2026.2, l: 'v2026 · 12 produk' },
+  { t: 2026.2, l: 'v2026 · sekarang' },
 ]
 
 /**
@@ -53,13 +53,13 @@ export const branches = [
 ]
 
 /** Baris yang diketik di hero. */
-export const tagline = '> satu orang, satu produk utuh: database, API, web, sampai aplikasi di App Store & Google Play. 12 produk sudah dipakai orang sungguhan.'
+export const tagline = '> saya membangun platform untuk pertanian, konservasi, dan organisasi nirlaba: web, API, dan aplikasi mobile.'
 
 /** Log boot di layar loading. */
 export const boot = [
   '[ ok ] memuat 17 repositori',
   '[ ok ] menyusun web, API & mobile',
-  '[ ok ] menyiapkan 12 produk',
+  '[ ok ] menyiapkan platform',
   '[ ok ] siap',
 ]
 
@@ -95,8 +95,8 @@ export const timeline = [
   {
     y: '2023',
     t: 'Frontend Engineer',
-    s: 'KALEKA Indonesia · Bali',
-    c: 'Memegang Tanibaik end-to-end di tiga codebase (web Next.js, API ASP.NET Core, aplikasi Flutter), dari skema database sampai aplikasi di HP petani.',
+    s: 'KALEKA Indonesia · remote',
+    c: 'Developer utama Tanibaik, platform layanan petani sawit (web, API, dan aplikasi Android/iOS). Di Kaleka saya juga merawat situs dan CMS, portal data, platform berbasis peta, dan aplikasi lapangan.',
     code: ['$ git checkout kaleka/tanibaik', '> web: next.js   api: .net', '> app: flutter   db: postgres', '✓ live di 3 platform'],
     m: 'rings',
     h: 200,
@@ -122,9 +122,9 @@ export const timeline = [
   {
     y: '2026',
     t: 'Sekarang',
-    s: '7+ produk Kaleka · proyek pribadi',
-    c: 'Di Kaleka: program donor, membership dan referal, kuitansi otomatis, dan OTP WhatsApp→SMS. Di luar kantor: TJF Prototype, SaaS Booking multi-tenant (Next.js + .NET), dan Momenta, editor undangan digital.',
-    code: ['$ git log --all --oneline', '> kaleka · freelance · pribadi', '> produk.rilis = 12', '✓ HEAD → main'],
+    s: 'Kaleka · proyek pribadi',
+    c: 'Di Kaleka: mengembangkan Tanibaik (pelatihan, sertifikasi, program donor, dan penjualan hasil panen) sambil merawat platform lain. Di luar kantor: TJF Prototype, SaaS Booking (Next.js + .NET), dan Momenta, editor undangan digital.',
+    code: ['$ git log --all --oneline', '> kaleka · freelance · pribadi', '✓ HEAD → main'],
     m: 'stripes',
     h: 215,
   },
@@ -134,12 +134,12 @@ export const timeline = [
 export const featured = {
   name: 'Tanibaik',
   report:
-    'Platform yang membantu petani sawit naik kelas: pelatihan, sertifikasi keberlanjutan (ISPO/RSPO), pemetaan lahan, sampai penjualan hasil panen. Tiga codebase (web, API, mobile) saya pegang sendiri sejak 2023, dari skema database sampai aplikasi yang dipakai petani di lapangan.',
+    'Platform layanan untuk petani sawit swadaya: pelatihan, sertifikasi ISPO/RSPO, pemetaan lahan, dan penjualan hasil panen. Saya developer utamanya sejak 2023, mengerjakan web, API, dan aplikasi Android/iOS, termasuk sisi admin yang dipakai tim untuk menjalankan program.',
   highlights: [
-    'Membuka sumber pendanaan baru: program donor dari nol, lengkap dengan dashboard dampak publik/privat, membership bertingkat, dan kode referal ambassador yang melacak asal setiap pendaftar.',
-    'Login yang tidak gampang tumbang: OTP WhatsApp otomatis beralih ke SMS saat satu vendor bermasalah, jadi petani tetap bisa masuk.',
-    'Memangkas kerja manual admin: transaksi hasil panen dengan kuitansi otomatis, pengajuan ulang, notifikasi, dan ekspor Excel sekali klik.',
-    'Belajar dari HP: pelatihan dan sertifikasi (video, buku saku flipbook, kuis) di web dan mobile, plus dashboard harga komoditas dwibahasa.',
+    'Untuk petani: pelatihan lewat HP (video, buku saku, kuis), info harga komoditas, pendampingan sertifikasi, dan penjualan hasil panen.',
+    'Untuk tim dan admin: pengelolaan program, transaksi hasil panen, laporan, dan ekspor data.',
+    'Untuk donor: program donasi dengan membership, kode referal ambassador, dan dashboard dampak.',
+    'Saya kerjakan dari database, API, sampai tampilan web dan mobile, lalu rawat setelah rilis.',
   ],
   stats: [
     { label: 'Peran', value: 'Fullstack' },
@@ -155,7 +155,7 @@ export const cards = [
     st: 'Berjalan',
     name: 'Tanibaik',
     kind: 'Web · API · Mobile',
-    p: 'Satu ekosistem untuk petani, donor, dan admin: pelatihan, sertifikasi, sampai penjualan hasil panen. Web, API, dan mobile dipegang satu orang.',
+    p: 'Platform layanan petani sawit: pelatihan, sertifikasi, dan penjualan hasil panen, plus sisi admin dan donor. Saya developer utama untuk web, API, dan mobile.',
     stack: ['Next.js', '.NET', 'Flutter'],
     live: true,
   },
@@ -170,7 +170,7 @@ export const cards = [
     st: 'Mobile',
     name: 'Katapeta',
     kind: 'Pemetaan',
-    p: 'Tetap jalan tanpa sinyal: peta offline dan draf tersimpan, jadi pemetaan lahan dan komoditas di pelosok tidak hilang.',
+    p: 'Aplikasi pemetaan lahan dan komoditas untuk tim lapangan, tetap bisa dipakai di daerah tanpa sinyal.',
     stack: ['Flutter', 'Offline map'],
   },
   {
@@ -184,7 +184,7 @@ export const cards = [
     st: 'Web',
     name: 'Aspiran',
     kind: 'Platform aliansi',
-    p: 'Dari nol sampai live: peta anggota interaktif, notula rapat yang terbuka untuk publik, dan analitik pengunjung.',
+    p: 'Situs aliansi dengan peta anggota, notula rapat untuk publik, dan analitik pengunjung. Saya bangun dari awal.',
     stack: ['Next.js', 'Leaflet'],
   },
   {
@@ -198,7 +198,7 @@ export const cards = [
     st: 'Data',
     name: 'Satudata',
     kind: 'Portal data',
-    p: 'Satu pintu untuk data: katalog dan master data, plus backend yang menarik data perlindungan hutan dan profil lahan secara otomatis.',
+    p: 'Portal data Kaleka: katalog dan master data, termasuk data perlindungan hutan dan profil lahan.',
     stack: ['React', '.NET'],
   },
   {
@@ -260,7 +260,7 @@ export const stack = [
       { n: 'Laravel + Octane', where: 'admin Miniseri' },
       { n: 'Node.js · Prisma', where: 'Momenta' },
       { n: 'REST API · JWT', where: 'auth, role & permission' },
-      { n: 'OTP WhatsApp → SMS', where: 'login multi-channel Tanibaik' },
+      { n: 'Integrasi WhatsApp & SMS', where: 'login dan notifikasi Tanibaik' },
     ],
   },
   {

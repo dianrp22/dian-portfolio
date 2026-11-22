@@ -10,7 +10,7 @@ const year = new Date().getFullYear()
 const stage = ref<HTMLElement>()
 const waLink = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(profile.whatsappText)}`
 
-// live Bali clock for the contact strip
+// live local clock for the contact strip
 const fmt = new Intl.DateTimeFormat('id-ID', { hour: '2-digit', minute: '2-digit', timeZone: profile.timezone })
 const time = ref(fmt.format(new Date()))
 setInterval(() => (time.value = fmt.format(new Date())), 15000)
@@ -101,7 +101,7 @@ onMounted(() => {
             <div class="hside hside-r" data-in="1100">
               <div class="panel br">
                 <span class="eyebrow">Sedang dikerjakan</span>
-                <p>Tanibaik: program donor, pelatihan, dan penyerapan hasil panen petani.</p>
+                <p>Tanibaik: platform layanan petani sawit (web, API, mobile).</p>
                 <div class="bar" aria-label="sedang berjalan"><i></i></div>
               </div>
               <div class="panel br">
@@ -111,7 +111,7 @@ onMounted(() => {
             </div>
           </div>
           <div class="hero-foot" data-in="1500">
-            <a class="cta" href="#karya">[ Lihat 12 produk → ]</a>
+            <a class="cta" href="#karya">[ Lihat proyek → ]</a>
             <span class="eyebrow">Gerakkan kursor di atas halaman</span>
             <div class="socials">
               <a :href="`mailto:${profile.email}`">Email</a>
@@ -246,7 +246,7 @@ onMounted(() => {
           <p class="copied" id="copied" aria-live="polite"></p>
 
           <div class="fstatus">
-            <span><i class="dot" aria-hidden="true"></i>Bali · {{ time }} WITA</span>
+            <span><i class="dot" aria-hidden="true"></i>Medan · {{ time }} WIB</span>
             <span>Fullstack · web, API, mobile</span>
             <span>Terbuka: freelance &amp; remote</span>
           </div>
