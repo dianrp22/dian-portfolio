@@ -106,7 +106,7 @@ onMounted(() => {
               </div>
               <div class="panel br">
                 <span class="eyebrow">Terbuka untuk</span>
-                <p>Posisi fullstack: remote, hybrid, atau onsite (siap relokasi) · proyek freelance</p>
+                <p>Posisi fullstack: remote atau onsite di mana saja, dalam &amp; luar negeri (siap relokasi) · proyek freelance</p>
               </div>
             </div>
           </div>
@@ -248,7 +248,7 @@ onMounted(() => {
           <div class="fstatus">
             <span><i class="dot" aria-hidden="true"></i>{{ time }} WIB</span>
             <span>Fullstack · web, API, mobile</span>
-            <span>Terbuka: remote, onsite &amp; freelance</span>
+            <span>Terbuka: remote, onsite di mana saja &amp; freelance</span>
           </div>
         </div>
         <nav class="fside" aria-label="Navigasi bawah">
