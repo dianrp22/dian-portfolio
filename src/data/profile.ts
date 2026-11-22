@@ -53,7 +53,7 @@ export const branches = [
 ]
 
 /** Baris yang diketik di hero. */
-export const tagline = '> fullstack engineer di KALEKA, Bali: membangun platform untuk pertanian, konservasi, dan organisasi nirlaba, dari web, API, sampai aplikasi mobile.'
+export const tagline = '> fullstack engineer di KALEKA, Bali: web, API, dan aplikasi mobile, dari database sampai rilis. Sehari-hari kerja bareng AI coding agent.'
 
 /** Log boot di layar loading. */
 export const boot = [
@@ -290,6 +290,13 @@ export const stack = [
       { n: 'Nginx · Supervisor', where: 'server Miniseri' },
       { n: 'Vercel', where: 'portofolio ini' },
       { n: 'Deploy dev & prod', where: 'migrasi DB & redeploy' },
+    ],
+  },
+  {
+    key: 'ai',
+    items: [
+      { n: 'Claude Code', where: 'coding agent harian: Tanibaik, Kaleka.id, Aspiran, Kolibri, Pugar Bumi' },
+      { n: 'Agen AI buatan sendiri', where: 'otomasi invoice bulanan & draf email' },
     ],
   },
 ]
